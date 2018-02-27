@@ -7,8 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<script type="text/javascript" href="{{asset('js/app.js')}}"></script>
 </head>
-
-<body>
+<body style="background-color: #3a4246;">
 @yield('content')
 </body>
 </html>
