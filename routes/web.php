@@ -23,6 +23,8 @@ Route::get('/signup', function () {
     return view('user.signup');
 });
 
+Route::get('/venues', 'VenuesController@index');
+
 // Route::get('/venues/create', function () {
 //     return view('venue.create');
 // });

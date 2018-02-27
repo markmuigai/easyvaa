@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'foursquare' => [
+    'clientId' => 'ZI3FM3OFMJD4IAMCN5XFLEHGJBL3UT40H4IAXAZKGPDFGTJU',
+    'clientSecret' => 'ZMXERFC1P3MSHKRH5CI5LNVCGIAKJD442O5XSJ1BZHOQGZGF',
+]
+
 ];
