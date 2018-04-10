@@ -68,6 +68,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => venyu\User::class,
+            'table' => 'users',
         ],
 
         // 'users' => [

@@ -8,8 +8,8 @@
 	}
 </style>
 <div id="content" class="container">
-	@foreach($venues as $venue)
+<!-- 	@foreach($venues as $venue)
 	<li>{{$venue->name}}</li>
-	@endforeach
+	@endforeach -->
 </div>
 @endsection

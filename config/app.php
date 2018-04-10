@@ -160,6 +160,7 @@ return [
         // venyu\Providers\BroadcastServiceProvider::class,
         venyu\Providers\EventServiceProvider::class,
         venyu\Providers\RouteServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
 
     ],
 
@@ -210,6 +211,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Larasquare' => Iivannov\Larasquare\Facade\Larasquare::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
