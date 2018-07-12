@@ -29,6 +29,12 @@
         margin-top: 3em;
     }
 
+    .col-md-4.venues{
+        overflow: hidden;
+        text-overflow: ellipsis;     /** IE6+, Firefox 7+, Opera 11+, Chrome, Safari **/
+        
+    }
+
     #flash-message{
         position: absolute;
         z-index: 10;

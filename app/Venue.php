@@ -1,8 +1,9 @@
 <?php
 
 namespace App;
-
+use App\Filters\VenueFilter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Venue extends Model
 {
@@ -25,5 +26,20 @@ class Venue extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function features()
+    {
+        return $this->belongsToMany(Feature::class);
+    }
+
+    public function scopeFilter(Builder $builder, $request)
+    {
+        return (new VenueFilter($request))->filter($builder);
     }
 }

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
   <div class="jumbotron text-center landingpage" style="margin-top: 0px;">
     <h1 class="display-3">venyu</h1> 

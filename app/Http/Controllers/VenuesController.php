@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Venue;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Category;
+use App\User;
 
 
 class VenuesController extends Controller
@@ -14,12 +16,25 @@ class VenuesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $venues = Venue::paginate(3);
         //$venues = Venue::all();
-        // dd($venues);
+        // if($username = request('by')){
+        //     $user = User::where('name', $username)->firstOrFail();
+
+        //     $venues->where('user_id', $user->id); 
+        // }
+
+        //$venues = $venues->get();
+
+        //$venues = Venue::paginate(6);
+        
+        $venues = Venue::filter($request)->get();
+        dd($venues);
+
+        
+        //$venues = Venue::with('categories')->get();
         return view('venues.index', compact('venues'));
     }
 
@@ -42,13 +57,33 @@ class VenuesController extends Controller
      */
     public function store(Request $request)
     {
+        $categoryId = request('categoryId[]');
+        $venue->categories()->attach($categoryId);
+        $venueId = request('venueId');
+        $venue->features()->attach($venueId);
         //Create a new venue using the request data
         $venue = new Venue;
         $venue->venue_name = request('venue_name');
         $venue->user_id = Auth::id();
         $venue->description = request('description');
-        $venue->imageUrl = $request->file('imageUrl')->store('public');
-        // $url = Storage::url($venue->imageUrl);
+        $venue->images = $request->file('images');
+        $name = $file->getClientOriginalName();
+        $file->move('image', $name);
+        $venue->images = 
+    //             $file->move('image',$name);
+    //     $input=$request->get('images');
+    //     $images=array();
+    //     if($files=$request->file('images')){
+    //         foreach($files as $file){
+    //             $name=$file->getClientOriginalName();
+    //             $file->move('image',$name);
+    //             $images[]=$name;
+    //         }
+    //     }
+    // /*Insert your data*/
+    //     $venue->images = implode("|",$images);
+
+
         // dd($venue->imageUrl);
         // //Save it to the database
         $venue->save();
@@ -135,3 +170,5 @@ class VenuesController extends Controller
         //
     }
 }
+
+
