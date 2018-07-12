@@ -38,16 +38,24 @@
 							  </label>
 							</div>
 						@endforeach <br>
+
+						<img height="200px" width="100px" src="{{ asset('images/' . $venue->image) }}"">	
 						<div class="form-group">
-						  <label>Upload First Image</label>
+						  <label>Upload Different First Image</label>
 						  <!-- <input type="file" class="form-control-file" name="imageUrl"> -->
 						  <input type="file" class="form-control" name="image" placeholder="address" multiple>
 						</div>
+
+						<img height="200px" width="100px" src="{{ asset('images/' . $venue->second_image) }}"">
+
 						<div class="form-group">
 						  <label>Upload Second Image</label>
 						  <!-- <input type="file" class="form-control-file" name="imageUrl"> -->
 						  <input type="file" class="form-control" name="second_image" placeholder="address" multiple>
 						</div>
+
+						<img height="200px" width="100px" src="{{ asset('images/' . $venue->third_image) }}"">
+
 						<div class="form-group">
 						  <label>Upload Third Image</label>
 						  <!-- <input type="file" class="form-control-file" name="imageUrl"> -->

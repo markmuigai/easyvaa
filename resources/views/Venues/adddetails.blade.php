@@ -1,10 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-<div class="col-md-6" style="background-color: white; padding: 2em; border-radius: 4px;">
+<div class="col-md-6" style="background-color: white; margin:3em; padding: 2em; border-radius: 4px;">
 	<form method="POST" action="">
 		{{csrf_field()}}
 		<div class="form-group">
+		<h3>Step 2></h3>
+		<h4>Add Categories</h4>
 		@foreach($categories as $category)
 			<div class="form-check">
 			  <label class="form-check-label">
@@ -14,6 +16,7 @@
 		@endforeach
 		</div>
 		<div class="form-group">
+			<h4>Add Features</h4>
 		@foreach($features as $feature)
 			<div class="form-check">
 			  <label class="form-check-label">

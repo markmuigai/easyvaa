@@ -32,4 +32,6 @@ Route::get('/myvenues', 'VenuesController@myvenues');
 
 Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');
 
-Route::put('/myvenues/{venue}', 'VenuesController@update');
+Route::put('/myvenues/{venue}/edit', 'VenuesController@update');
+
+Route::put('/myvenues/{venue}/destroy', 'VenuesController@destroy');

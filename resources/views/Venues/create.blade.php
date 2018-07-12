@@ -8,7 +8,7 @@
 					<!-- Display Validation Errors -->
 					@include('layouts.errors')
 					<form method="POST" action="/venues" enctype="multipart/form-data" style="padding: 20px 50px;">
-						{{csrf_field()}}
+					{{csrf_field()}}
 						<div class="form-group">
 							<input type="text" class="form-control" name="venue_name" placeholder="Venue Name">
 						</div>
@@ -23,17 +23,17 @@
 						<div class="form-group">
 						  <label>Upload First Image</label>
 						  <!-- <input type="file" class="form-control-file" name="imageUrl"> -->
-						  <input type="file" class="form-control" name="images[]" placeholder="address" multiple>
+						  <input type="file" class="form-control" name="image" placeholder="address" multiple>
 						</div>
 						<div class="form-group">
 						  <label>Upload Second Image</label>
 						  <!-- <input type="file" class="form-control-file" name="imageUrl"> -->
-						  <input type="file" class="form-control" name="images[]" placeholder="address" multiple>
+						  <input type="file" class="form-control" name="second_image" placeholder="address" multiple>
 						</div>
 						<div class="form-group">
 						  <label>Upload Third Image</label>
 						  <!-- <input type="file" class="form-control-file" name="imageUrl"> -->
-						  <input type="file" class="form-control" name="images[]" placeholder="address" multiple>
+						  <input type="file" class="form-control" name="third_image" placeholder="address" multiple>
 						</div>
 						<div class="form-group">
 							<label>Fee Information</label>

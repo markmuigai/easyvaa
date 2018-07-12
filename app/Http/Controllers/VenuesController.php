@@ -81,24 +81,24 @@ class VenuesController extends Controller
         $venue->basic_info = request('basic_info');
         $venue->booking_info = request('booking_info');
         $venue->fee_info = request('fee_info');
-        // $venue->images = $request->file('images');
-        //$name = $file->getClientOriginalName();
-        // $file->move('image', $name);
-        // $venue->images = 
-    //             $file->move('image',$name);
-    //     $input=$request->get('images');
-    //     $images=array();
-    //     if($files=$request->file('images')){
-    //         foreach($files as $file){
-    //             $name=$file->getClientOriginalName();
-    //             $file->move('image',$name);
-    //             $images[]=$name;
-    //         }
-    //     }
-    // /*Insert your data*/
-    //     $venue->images = implode("|",$images);
 
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $venue->image = $name;
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $name);
 
+        $second_image = $request->file('second_image');
+        $name = time().'.'.$second_image->getClientOriginalExtension();
+        $venue->second_image = $name;
+        $destinationPath = public_path('/images');
+        $second_image->move($destinationPath, $name);
+
+        $third_image = $request->file('third_image');
+        $name = time().'.'.$third_image->getClientOriginalExtension();
+        $venue->image = $name;
+        $destinationPath = public_path('/images');
+        $third_image->move($destinationPath, $name);
         // dd($venue->imageUrl);
         // //Save it to the database
         //dd($venue);
