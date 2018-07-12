@@ -156,11 +156,15 @@ class VenuesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Venue $venue)
+    public function edit(Venue $venue, Category $category, Feature $feature)
     {
         //
+        $mycategories = $venue->categories()->pluck('id')->all(); 
+        $categories = Category::all();
+        $features = Feature::all();
+        //dd($features);
         $venue = Venue::find($venue->id);
-        return view('venues.edit', compact('venue'));
+        return view('venues.edit', compact('venue','categories','mycategories','features'));
     }
 
 
@@ -174,13 +178,6 @@ class VenuesController extends Controller
     public function update(Request $request, Venue $venue)
     {
         //
-        $venue->venue_name = request('venue_name');
-        $venue->user_id = Auth::id();
-        $venue->description = request('description');
-        $venue->imageUrl = $request->file('imageUrl');
-        //Save it to the database
-        $venue->save();
-
         //Validate request data
         //check laravel validation docs for examples
         $this->validate(request(),[
@@ -188,11 +185,25 @@ class VenuesController extends Controller
             'description' => 'required'
         ]);
 
+        $venue->user_id = Auth::id();
+        $venue->venue_name = request('venue_name');
+        $venue->description = request('description');
+        $venue->basic_info = request('basic_info');
+        $venue->booking_info = request('booking_info');
+        $venue->fee_info = request('fee_info');
+        $mycategories = request('mycategories');
+        $venue->categories()->attach($mycategories);
+        $myvenues = request('myfeatures');
+        $venue->features()->attach($myvenues);
+        $venue->categories()->sync(request('mycategories'));
+        //Save it to the database
+        $venue->save();
+        //dd($venue);
         //flash message, modal.
         //Your venue has been saved successfully 
         session()->flash('message', 'Your venue has been Edited successfully');
         //And then redirect to the homepage
-        return redirect('/venues');
+        return redirect('/myvenues');
 
     }
 

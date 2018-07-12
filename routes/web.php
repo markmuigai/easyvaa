@@ -31,3 +31,5 @@ Route::post('/venues/{venue}/events', 'EventsController@store');
 Route::get('/myvenues', 'VenuesController@myvenues');
 
 Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');
+
+Route::put('/myvenues/{venue}', 'VenuesController@update');
