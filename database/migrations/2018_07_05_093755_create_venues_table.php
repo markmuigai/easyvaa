@@ -17,16 +17,17 @@ class CreateVenuesTable extends Migration
         Schema::create('venues', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('name');
-            $table->string('contact'); 
-            $table->string('city');
+            $table->string('venue_name');
+            $table->string('contact')->nullable(); 
+            $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->decimal('location_lng', 10, 7)->nullable();
             $table->decimal('location_lat', 10, 7)->nullable();
             $table->longText('description')->nullable();
-            $table->string('images')->nullable();
-            $table->string('imageUrl')->nullable();
-            $table->longText('basic_info');s
+            $table->string('image')->nullable();
+            $table->string('second_image')->nullable();
+            $table->string('third_image')->nullable();
+            $table->longText('basic_info');
             $table->string('features')->nullable();
             $table->longText('fee_info')->nullable();
             $table->longText('booking_info')->nullable();

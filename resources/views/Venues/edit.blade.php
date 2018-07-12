@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-8 venueform">
+		<div class="row justify-content-center" style=" margin: 2em">
+			<div class="col-md-8 venueform" style="background-color: white; border-radius: 4px; padding: 3em;">
 				<div class="panel panel-default">
-					<div class="panel-heading display-5">Upload a venue</div>
+					<div class="panel-heading"><h3>Upload a venue</h3></div>
 					<!-- Display Validation Errors -->
 					@include('layouts.errors')
 					<form method="POST" action="{{ url('venues/'.$venue->id) }}" style="padding: 20px 50px;">

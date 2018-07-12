@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
 }
 
 
-// foreach($venues as $venue){$venue->categories()->attach($category->id);}
-// foreach($venues as $venue){$venue->features()->attach($feature->id);}
+// foreach($venues as $venue){$venue->categories()->attach([1,2,3,4,5]]);}
+// foreach($venues as $venue){$venue->features()->attach([1,2,3,4,5]);}
+

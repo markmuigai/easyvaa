@@ -6,6 +6,7 @@ use App\Venue;
 use Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Category;
+use App\Feature;
 use App\User;
 
 
@@ -19,7 +20,7 @@ class VenuesController extends Controller
     public function index(Request $request)
     {
         //
-        //$venues = Venue::all();
+        $venues = Venue::with('categories','features')->paginate(6);
         // if($username = request('by')){
         //     $user = User::where('name', $username)->firstOrFail();
 
@@ -28,14 +29,26 @@ class VenuesController extends Controller
 
         //$venues = $venues->get();
 
-        //$venues = Venue::paginate(6);
+        //$venues = Venue::paginate(3);
         
-        $venues = Venue::filter($request)->get();
-        dd($venues);
-
-        
-        //$venues = Venue::with('categories')->get();
+        //$venues = Venue::filter($request)->get();
+        //dd($venues);
         return view('venues.index', compact('venues'));
+    }
+
+    public function myVenues()
+    {   
+        $user = User::find(Auth::id());
+        $userId = $user->id;
+        $venues = Venue::where('user_id', $userId)->paginate(3);
+        //dd($userId); 
+        return view('venues.myvenues', compact('venues'));
+    }
+
+    public function byfeatures(Request $request)
+    {
+
+        $venues = Venue::where($venue->category);
     }
 
     /**
@@ -46,7 +59,9 @@ class VenuesController extends Controller
     public function create()
     {
         //
-        return view('venues.create');
+        $categories = Category::all();
+        $features = Feature::all();
+        return view('venues.create', compact('categories','features'));
     }
 
     /**
@@ -57,19 +72,19 @@ class VenuesController extends Controller
      */
     public function store(Request $request)
     {
-        $categoryId = request('categoryId[]');
-        $venue->categories()->attach($categoryId);
-        $venueId = request('venueId');
-        $venue->features()->attach($venueId);
+
         //Create a new venue using the request data
         $venue = new Venue;
-        $venue->venue_name = request('venue_name');
         $venue->user_id = Auth::id();
+        $venue->venue_name = request('venue_name');
         $venue->description = request('description');
-        $venue->images = $request->file('images');
-        $name = $file->getClientOriginalName();
-        $file->move('image', $name);
-        $venue->images = 
+        $venue->basic_info = request('basic_info');
+        $venue->booking_info = request('booking_info');
+        $venue->fee_info = request('fee_info');
+        // $venue->images = $request->file('images');
+        //$name = $file->getClientOriginalName();
+        // $file->move('image', $name);
+        // $venue->images = 
     //             $file->move('image',$name);
     //     $input=$request->get('images');
     //     $images=array();
@@ -86,6 +101,7 @@ class VenuesController extends Controller
 
         // dd($venue->imageUrl);
         // //Save it to the database
+        //dd($venue);
         $venue->save();
 
         //Validate request data
@@ -99,7 +115,7 @@ class VenuesController extends Controller
         //Your venue has been saved successfully 
         session()->flash('message', 'Your venue has been saved successfully');
         //And then redirect to the homepage
-        return redirect('/venues/create');
+        return redirect('/details');
     }
 
     /**
@@ -111,7 +127,27 @@ class VenuesController extends Controller
     public function show(Venue $venue)
     {
         //
+        $venue = Venue::with('features', 'categories')->find($venue->id);
         return view('venues.show', compact('venue'));
+    }
+
+    public function createDetails()
+    {
+
+        $categories = Category::all();
+        $features = Feature::all();
+        return view('Venues.adddetails', compact('categories','features'));
+    }
+
+    public function storeDetails(request $request)
+    {
+        $venue = Venue::orderBy('created_at', 'desc')->first();
+        $mycategories = request('mycategories');
+        $venue->categories()->attach($mycategories);
+        $myvenues = request('myfeatures');
+        $venue->features()->attach($myvenues);
+
+        return redirect ('/venues');
     }
 
     /**
@@ -120,12 +156,13 @@ class VenuesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Venue $venue)
     {
         //
-        $venue = Venue::find($id);
+        $venue = Venue::find($venue->id);
         return view('venues.edit', compact('venue'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -168,6 +205,7 @@ class VenuesController extends Controller
     public function destroy($id)
     {
         //
+        $venue = Venue::find($id);
     }
 }
 

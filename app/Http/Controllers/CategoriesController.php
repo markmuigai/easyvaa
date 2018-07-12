@@ -10,11 +10,14 @@ class CategoriesController extends Controller
     //
     public function create()
     {
-    	return view('categories.create');
+    	return view('Categories.create');
     }
-    public function store($venueId, Request $request)
+    public function store(Request $request)
     {
-    	$venue->roles()->attach($request->all());
+    	$category = new category;
+    	$category->name = Request($name);
+    	$category->save();
 
+    	 return redirect('/venues/addcategoryfeature');
     }
 }

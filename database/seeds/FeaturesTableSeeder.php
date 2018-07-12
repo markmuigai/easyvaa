@@ -53,6 +53,10 @@ class FeaturesTableSeeder extends Seeder
         	'name' => 'Shower Facilities'
         ]);
 
+        Feature::create([
+            'name' => 'Self-catering Only'
+        ]);
+
     }
 }
 

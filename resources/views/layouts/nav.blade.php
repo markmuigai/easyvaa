@@ -13,8 +13,8 @@
                 <li><a href="/Admin">Admin</a></li>
                 <li><a href="/venues">Venues</a></li>
                 <li><a href="/venues/create">Upload a Venue</a></li>
-                <li><a href="/{user->name}/venues">My Venues</a></li>
-                <li><a href="{user->name}/events">My events</a></li>
+                <li><a href="/myvenues">My Venues</a></li>
+                <li><a href="/myevents">My Events</a></li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">

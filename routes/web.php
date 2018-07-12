@@ -19,5 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/venues/{venue}/events', 'EventsController@store');
+// Route::post('/venues/{venue}/categories', 'CategoriesController@store');
 Route::resource('venues', 'VenuesController');
+
+Route::get('/details', 'VenuesController@createDetails');
+
+Route::post('/details', 'VenuesController@storeDetails');
+
+Route::post('/venues/{venue}/events', 'EventsController@store');
+
+Route::get('/myvenues', 'VenuesController@myvenues');
+
+Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');

@@ -25,16 +25,17 @@
         margin-right: 2em;
     }
 
-    .col-md-8.venueform, .container.myvenues, .container.myvenue{
+/*    .col-md-8.venueform, .container.myvenues, .container.myvenue{
         margin-top: 3em;
-    }
+    }*/
 
-    .col-md-4.venues{
-        overflow: hidden;
-        text-overflow: ellipsis;     /** IE6+, Firefox 7+, Opera 11+, Chrome, Safari **/
-        
-    }
 
+    
+    input.form-control{
+        border: 0px; 
+        border-radius: 0px; 
+        border-bottom: 1px solid blue;
+    }
     #flash-message{
         position: absolute;
         z-index: 10;

@@ -34,9 +34,31 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Venue $venue)
     {
-        //
+
+        $this->validate(request(),[
+            'event_type' =>'required|min:5',
+        ]);
+        //add an event to a venue
+        //$venue->addVenue(request('event_type')); 
+        // Event::create(request(['venue_id', 'event_type']));
+        $event = new Event;
+        $event->event_type = request('event_type');
+        $event->user_id = Auth::id();
+        $event->venue_id = $venue->id;
+        //Save it to the database
+        $event->save();
+        
+        //send an email to the owner about the booking on request
+        //$user = Auth::user();
+        //\Mail::to($venue->user)->send(new RequestVenue($user));
+
+        //flash message. Thankyou for booking. We will get back to you in a jiffy!
+
+        session()->flash('message', 'Thanks for the quote. Owners will get back to you in a jiffy!');
+        //And then redirect to the previous page
+        return back();
     }
 
     /**

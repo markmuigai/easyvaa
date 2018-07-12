@@ -16,9 +16,9 @@ class VenuesTableSeeder extends Seeder
     {
         //
         Venue::create([
-            'name' => 'Makena’s Place | Photo Shoot Venue in Karen, Nairobi | VFA',
+            'venue_name' => 'Makena’s Place | Photo Shoot Venue in Karen, Nairobi | VFA',
             'user_id' => '1',
-            'description' => 'Makenas Place is a country cottage with mature, expansive and beautiful gardens that can be hired for wedding bridal party photo sessions, baby bump, engagement, couple and family shoots as well as for commercial shoots. To know the cost for each type of photo shoot, please click on the link or scroll down to know all the details about hiring this venue for a shoot.',
+            'description' => 'Makenas Place is a country cottage with mature, expansive and beautiful gardens that can be hired for wedding bridal party photo sessions, baby bump, engagement, couple and family shoots as well as for commercial shoots.',
             'contact' => '+254734655076',
             'city' => 'Nairobi',
             'address' => 'karen',
@@ -32,14 +32,16 @@ class VenuesTableSeeder extends Seeder
 	        //     'Country cottage house in the back drop.',
 	        //     'The living room area only provided during an engagement shoot.'
         	// ],
-
+            'image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/02/Makenas-Place-Photo-Session-Sites-in-Nairobi-VFA.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
+            'second_image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/02/Makenas-Place_Wedding-Photo-Shoot-Venues-in-Nairobi_-VFA.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
+            'third_image' => 'https://i1.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/02/Makenas-Place_Places-for-photo-shoots-in-Nairobi_VFA_2.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
         	'fee_info' => 'To use Makena’s Place for your wedding bridal party photo session, the rate is Kshs. 20,000 for up to 15pax. An additional 5pax will have an extra cost of Kshs. 300 per person. The maximum bridal party inclusive of children is 20pax. The rate provides a light snack consisting of juice and minimal bitings for the bridal party. If you would like to offer the light refreshment to your photography crew and drivers, please add an extra Kshs. 300 per person. There are two time slots to choose from, that is, 12pm – 4pm or 4pm-7pm. We encourage each bridal party who have selected the first time slot to keep within the set timings and not to inconvenience the next bridal party for the second time slot.',
 
         	'booking_info' => 'To confirm your booking, you will need to make a 60% deposit and the 40% balance a month to the booking date for wedding photo sessions. For the other type of shoots, the balance is required a week to the shoot date.  Payment is via Lipa na Mpesa Till Number 548771.',
         ]);
 
         Venue::create([
-        	'name' => 'Runda K. Gardens',
+        	'venue_name' => 'Runda K. Gardens',
         	'user_id' => '2',
          //    'categories' => ['Party',
          //    	'Corporate event',
@@ -52,13 +54,16 @@ class VenuesTableSeeder extends Seeder
          //    	'Book Launch',
          //    	'Crafts and fair'
         	// ],
-        	'description' =>'The Runda K. Gardens is located in Runda, Nairoi and is suitable to host events like weddings, team building, and parties. Evening events are not allowed. Please click on the link or scroll down the page to know more about this garden.',
+        	'description' =>'The Runda K. Gardens is located in Runda, Nairoi and is suitable to host events like weddings, team building, and parties. Evening events are not allowed.',
         	'contact' => '+254734655076',
         	'city' => 'Nairobi',
         	'address' => 'Runda',
         	'location_lat' => '-1.2023876',
         	'location_lng' => '36.7997464',
         	'basic_info' => 'The Runda K. Gardens is a garden venue located in the Runda estate of Nairobi, Kenya. The venue is along Kigwaru Drive , which is off the Northern bypass, and close to the Two Rivers Mall.',
+            'image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/06/Runda-K.-Gardens_Team-Building-Venue_Nairobi_VFA_1.jpg?zoom=1.125&fit=1080%2C715&ssl=1',
+            'second_image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/06/Runda-K.-Gardens_Graduation-Birthday-Party-Venue_Nairobi_VFA_1.jpg?zoom=1.125&fit=1080%2C715&ssl=1',
+            'third_image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/06/Runda-K.-Gardens_Graduation-Birthday-Party-Venue_Nairobi_VFA_2.jpg?zoom=1.125&fit=1080%2C715&ssl=1',
         	// 'features' => ['The cut off time for events is 6.30pm',
         	// 	'The venue has washrooms and sufficient parking',
         	// 	'There is access to power and water',
@@ -71,7 +76,7 @@ class VenuesTableSeeder extends Seeder
         ]);
 
         Venue::create([
-        	'name' => 'The Venue',
+        	'venue_name' => 'The Venue',
         	'user_id' => '3',
          //    'categories' => ['Party',
          //    	'Corporate event',
@@ -84,24 +89,27 @@ class VenuesTableSeeder extends Seeder
          //    	'Art exhibition',
          //    	'Musical event',
         	// ],
-        	'description' =>'This is a garden venue with two garden areas that can be used to set up for a wedding, birthday or graduation party, team building, baby & bridal showers as well as hired for corporate functions. The first garden can sit 400pax. The wedding venue hire fee is Kshs. 75,000. Please click on the link or scroll down further to know more information about this venue.',
+        	'description' =>'This is a garden venue with two garden areas that can be used to set up for a wedding, birthday or graduation party, team building, baby & bridal showers as well as hired for corporate functions. The first garden can sit 400pax.  ',
         	'contact' => '+254734655076',
         	'city' => 'Nairobi',
         	'address' => 'Lavington, Hatheru Rd',
         	'location_lat' => '-1.2913708',
         	'location_lng' => '36.7530282',
         	'basic_info' => 'Hidden away in the leafy Lavington suburb, the rare gem that is The Venue @ Lavington awaits you. This venue is located off Hatheru Road, off Gitanga Road, and is an event space with two garden spaces. The first garden can comfortably sit up to 300pax restaurant style. The second garden is more of the parking grounds but can still be used to set up for an event. In addition, this venue has washrooms. Two for ladies and two for gents.',
+            'image' => 'https://i1.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/02/The-Venue-@-Lavington-Garden-Wedding-Venue-Nairobi-Kenya.jpg?zoom=1.125&fit=1200%2C800&ssl=1',
+            'second_image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/02/The-Venue-@-Lavington-Garden-Wedding-Venue-Nairobi-1.jpg?zoom=1.125&fit=1200%2C800&ssl=1',
+            'third_image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2018/02/The-Venue-@-Lavington-Bridal-Baby-Shower-Venue-Nairobi-1.jpg?zoom=1.125&fit=2087%2C800&ssl=1',
         	// 'features' => ['',
         	// 	'',
         	// 	'',
         	// 	'',
         	// ],
         	'booking_info' => 'The gardens are open for site visits on Monday, Thursday and Friday from 9:00 am to 5:00pm and on Saturdays from 9:00am to 1:00pm. The gardens are closed on Sunday’s and public holidays.',
-        	'fee_info' => '',
+        	'fee_info' => 'The wedding venue hire fee is Kshs. 75,000.',
         ]);
 
         Venue::create([
-        	'name' => 'Divine Gardens and Resort',
+        	'venue_name' => 'Divine Gardens and Resort',
         	'user_id' => '4',
          //    'categories' => ['Party',
          //    	'Corporate event',
@@ -114,13 +122,16 @@ class VenuesTableSeeder extends Seeder
          //    	'Crafts and fair',
 
         	// ],
-        	'description' =>'Divine Gardens and Resort is located off Kiambu Road and is suitable to host all outdoor events ranging from weddings, graduation parties, birthday parties, team building and commercial shoots. The gardens can sit up to 600pax. The day garden wedding venue hire fee is Kshs. 65,000. The garden is hired on a self catering basis. That is, you will hire your own tents, tables, chairs and caterer. Click or scroll down for all relevant information about hiring this venue.',
+        	'description' =>'Divine Gardens and Resort is located off Kiambu Road and is suitable to host all outdoor events ranging from weddings, graduation parties, birthday parties, team building and commercial shoots. The gardens can sit up to 600pax.',
         	'contact' => '+254734655076',
         	'city' => 'Nairobi',
         	'address' => 'Kiambu Rd',
         	'location_lat' => '-1.2115456',
         	'location_lng' => '36.8340434',
-        	'basic_info' => 'Divine Gardens and Resort is located along Kiambu Road in Nairobi, Kenya. This venue has two gardens, the first garden can host outdoor events of up to 300pax while the second garden can comfortably sit 600pax restaurant style. Most noteworthy to note about this venue are the supporting event facilities such as washrooms, kitchen area, bar area and outdoor wash area, meaning for a function, hand wash basins do not need to be hired.',
+        	'basic_info' => 'Divine Gardens and Resort is located along Kiambu Road in Nairobi, Kenya. This venue has two gardens, the first garden can host outdoor events of up to 300pax while the second garden can comfortably sit 600pax restaurant style. Most noteworthy to note about this venue are the supporting event facilities such as washrooms, kitchen area, bar area and outdoor wash area, meaning for a function, hand wash basins do not need to be hired. You will need to hire your own tents, tables, chairs and caterer.',
+            'image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/12/Devine-Garden-Resort-Wedding-Venue-Nairobi-1-VFA.jpg?zoom=1.125&fit=1040%2C780&ssl=1',
+            'second_image' => 'https://i1.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/12/Devine-Garden-Resort-Team-Building-Venues-in-Nairobi-3-VFA.jpg?zoom=1.125&fit=1040%2C780&ssl=1',
+            'third_image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/12/Devine-Garden-Resort-Wedding-Venue-Nairobi-2-VFA.jpg?zoom=1.125&fit=1040%2C780&ssl=1',
 
         	// 'features' => ['The gardens are purely garden hire only.',
         	// 	'Outside catering is allowed.',
@@ -134,7 +145,7 @@ class VenuesTableSeeder extends Seeder
         ]);
 
         Venue::create([
-        	'name' => 'Inzzu Gardens',
+        	'venue_name' => 'Inzzu Gardens',
         	'user_id' => '5',
          //    'categories' => ['Party',
          //    	'Corporate event',
@@ -151,6 +162,9 @@ class VenuesTableSeeder extends Seeder
         	'location_lat' => '-1.2274077',
         	'location_lng' => '36.7609402',
         	'basic_info' => 'The maximum sitting capacity restaurant style is 300pax and all events should be over by 6pm. Night events are not allowed. In addition, Inzzu Gardens has a small outdoor kitchen that can be utilized by the caterer to prepare meals for the event. Most noteworthy, the gardens are in a calm, serene and quiet environment away from the hustle and bustle of the city center.',
+            'image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/11/Inzzu-Gardens-Event-Venues-in-Nairobi-3.jpg?zoom=1.125&fit=1080%2C611&ssl=1',
+            'second_image' => 'https://i1.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/11/Inzzu-Gardens-Team-Building-Venues-Nairobi-VFA-4.jpg?zoom=1.125&fit=1080%2C668&ssl=1',
+            'third_image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/11/Inzzu-Gardens-Wedding-Venues-Nairobi-VFA-4.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
         	// 'features' => ['Two garden areas',
         	// 	'Washrooms for both gents and ladies, inclusive of shower facilities',
         	// 	'Access to power and water',
@@ -168,7 +182,7 @@ class VenuesTableSeeder extends Seeder
         ]);
 
         Venue::create([
-        	'name' => 'Vester Gardens',
+        	'venue_name' => 'Vester Gardens',
         	'user_id' => '7',
          //    'categories' => ['Filming event',
          //    	'Photoshoot',
@@ -180,6 +194,9 @@ class VenuesTableSeeder extends Seeder
         	'location_lat' => '-1.2101717',
         	'location_lng' => '36.8071271',
         	'basic_info' => 'Situated in one of the leading leafy suburbs in Nairobi County, Vester Gardens boasts of a sophisticated, chic, well-manicured and mature garden. The garden provides a picturesque background for memorable engagement, wedding, baby bump, fashion and lifestyle photos. The gardens are located in Runda Estate, Runda Groove. Furthermore, Vester Gardens makes a perfect and convenient wedding photo shoot location for couples having their wedding ceremonies and receptions at close-by venues such as:',
+            'image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/04/Vester-Gardens_Photo-Shoot-Venue_Nairobi_Venue-Finder-Africa-2.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
+            'second_image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/04/Vester-Gardens_Photo-Shoot-Venue_Nairobi_Venue-Finder-Africa-3.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
+            'third_image' => 'https://i0.wp.com/www.venuefinderafrica.com/wp-content/uploads/2017/04/Vester-Gardens_Photo-Shoot-Venue_Nairobi_Venue-Finder-Africa-4.jpg?zoom=1.125&fit=1080%2C720&ssl=1',
         	// 'features' => ['Power Source',
         	// 	'Parking Lot',
         	// 	'Washroom',
@@ -196,7 +213,7 @@ class VenuesTableSeeder extends Seeder
         ]);
 
         Venue::create([
-        	'name' => 'Amani Gardens Inn',
+        	'venue_name' => 'Amani Gardens Inn',
         	'user_id' => '8',
          //    'categories' => ['Party',
          //    	'Corporate event',
@@ -212,6 +229,9 @@ class VenuesTableSeeder extends Seeder
         	'location_lat' => '-1.2633669',
         	'location_lng' => '36.7864725',
         	'basic_info' => 'Amani Gardens Inn is both an outdoor and indoor event venue in Nairobi, Kenya. This venue is located along Rhapta Road in Westlands. It has old English style buildings and is surrounded by ancient trees.',
+            'image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2016/07/Amani-Garden-Inn_Nairobi_Meeting-Venue-2.jpg?zoom=1.125&fit=1304%2C800&ssl=1',
+            'second_image' => 'https://i1.wp.com/www.venuefinderafrica.com/wp-content/uploads/2016/07/Amani-Garden-Inn_Nairobi_Team-Building-Venue-2.jpg?zoom=1.125&fit=1000%2C565&ssl=1',
+            'third_image' => 'https://i2.wp.com/www.venuefinderafrica.com/wp-content/uploads/2016/07/Amani-Garden-Inn_Nairobi_Meeting-Venue.jpg?zoom=1.125&fit=1394%2C800&ssl=1',
         	// 'features' => ['',
         	// 	'',
         	// 	'',
