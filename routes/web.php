@@ -35,3 +35,7 @@ Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');
 Route::put('/myvenues/{venue}/edit', 'VenuesController@update');
 
 Route::put('/myvenues/{venue}/destroy', 'VenuesController@destroy');
+
+Route::get('/categories', 'CategoriesController@create');
+
+Route::post('/categories', 'CategoriesController@store');

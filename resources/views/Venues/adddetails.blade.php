@@ -5,15 +5,22 @@
 	<form method="POST" action="">
 		{{csrf_field()}}
 		<div class="form-group">
-		<h3>Step 2></h3>
-		<h4>Add Categories</h4>
-		@foreach($categories as $category)
-			<div class="form-check">
-			  <label class="form-check-label">
-			    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="mycategories[]" value="{{$category->id}}"> {{$category->name}}
-			  </label>
+			<h3>Step 2></h3>
+			<h4>Add Categories</h4>
+			<div class="row">
+				<div class="col-md-6">
+			@foreach($categories as $category)
+				<div class="form-check">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="mycategories[]" value="{{$category->id}}"> {{$category->name}}
+				  </label>
+				</div>
+			@endforeach
+				</div>
+				<div class="col-md-6">
+					@include('Categories.create');
+				</div>
 			</div>
-		@endforeach
 		</div>
 		<div class="form-group">
 			<h4>Add Features</h4>
