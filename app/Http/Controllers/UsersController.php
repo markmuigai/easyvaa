@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class UsersController extends Controller
 {
+
+
+public function logout() 
+{
+    //logout user
+    Auth::logout();
+    // redirect to homepage
+    return redirect('/');
+}
     /**
      * Display a listing of the resource.
      *

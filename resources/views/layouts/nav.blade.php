@@ -12,9 +12,11 @@
             <ul class="navbar-nav mr-auto">
                 <li><a href="/Admin">Admin</a></li>
                 <li><a href="/venues">Venues</a></li>
+                @if(Auth::check())
                 <li><a href="/venues/create">Upload a Venue</a></li>
                 <li><a href="/myvenues">My Venues</a></li>
                 <li><a href="/myevents">My Events</a></li>
+                @endif
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -27,26 +29,27 @@
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+            <div class="dropdown show">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{Auth::User()->name}}
+              </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
+              <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="#">Subscription</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" href="{{ url('/logout') }}">Logout</a>
+              </div>
+            </div>
                 @endguest
             </ul>
         </div>
     </div>
 </nav>
+@guest
+<div class="row justify-content-center" >
+    <h5 style="margin:5px"><a href="{{ route('login') }}">Log in</a> or <a href="{{ route('register') }}">register</a> for venue listing</h5>
+</div>
+@endguest
+
 
