@@ -18,9 +18,9 @@ class CreateEventsTable extends Migration
             $table->integer('user_id');
             $table->integer('venue_id');
             $table->string('event_type');
-            //$table->date('event_date');
-            //$table->integer('head_count');
-            //$table->text('message');
+            $table->date('date')->nullable();
+            $table->integer('head_count')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

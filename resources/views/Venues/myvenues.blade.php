@@ -16,7 +16,7 @@
 					<div style="margin: 1em" class="btn-group" role="group" aria-label="Basic example">
 					  <!-- <button type="button" class="btn btn-warning">Edit</button> -->
 					  <a href='/myvenues/{{$venue->id}}/edit' type="button" class="btn btn-warning">Edit</a>
-					  <a href='/myvenues/{{$venue->id}}' type="button" class="btn btn-warning">Delete</a>
+					  <a href='/myvenues/{{$venue->id}}/destroy' type="button" class="btn btn-warning">Delete</a>
 					  <!-- <button type="button" class="btn btn-danger">Delete</button> -->
 					</div>
 				  </div>

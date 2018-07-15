@@ -44,15 +44,15 @@
 				<p>{{$venue->booking_info}}</p>
 				</div>
 		</div>
-		<div class="col-md-4 eventform" style="border-width: 3px; background-color: white; padding: 30px; height: 500px">
+		<div class="col-md-4 eventform" style="border-width: 3px; background-color: white; padding: 30px; height: 400px">
 			<h2>Get a quote</h2>
 			<form method="POST" action="/venues/{{ $venue->id }}/events">
 				{{csrf_field()}}
 				<div class="form-group">
-					<input style="" type="text" name="type" class="form-control" placeholder="Event Type">
+					<input style="" type="text" name="event_type" class="form-control" placeholder="Event Type">
 				</div>
 				<div class="form-group">
-					<input type="text" name="date" class="form-control" placeholder="Event Date">
+					<input type="text" id="datepicker" name="date" class="form-control" placeholder="Event Date: (dd/mm/yyyy)">
 				</div>
 				<div class="form-group">
 					<input type="text" name="head_count" class="form-control" placeholder="Number of People">

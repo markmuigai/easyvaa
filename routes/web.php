@@ -30,6 +30,14 @@ Route::post('/details', 'VenuesController@storeDetails');
 
 Route::post('/venues/{venue}/events', 'EventsController@store');
 
+Route::get('/myevents', 'EventsController@myevents');
+
+Route::get('/myvenue/{venue}', 'EventsController@show');
+
+Route::get('/myevents/{venue}/edit', 'EventsController@edit');
+
+Route::put('/myevents/{venue}/events', 'EventsController@update');
+
 Route::get('/myvenues', 'VenuesController@myvenues');
 
 Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');
@@ -37,6 +45,7 @@ Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');
 Route::put('/myvenues/{venue}/edit', 'VenuesController@update');
 
 Route::put('/myvenues/{venue}/destroy', 'VenuesController@destroy');
+
 
 Route::get('/categories', 'CategoriesController@create');
 
