@@ -10,11 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li><a href="/Admin">Admin</a></li>
+                @if(Auth::user())
+                <li><a href="/admin">Admin</a></li>
+                @endif
                 <li><a href="/filters">Venues</a></li>
                 @if(Auth::check())
                 <li><a href="/venues/create">Upload a Venue</a></li>
+                @if(Auth::User()->venues->count()!= "0")
                 <li><a href="/myvenues">My Venues</a></li>
+                <li><a href="/myvenues/{venue}"> Pending Requests</a></li>
+                @endif
                 <li><a href="/myevents">My Events</a></li>
                 @endif
             </ul>
@@ -51,5 +56,6 @@
     <h5 style="margin:5px"><a href="{{ route('login') }}">Log in</a> or <a href="{{ route('register') }}">register</a> for venue listing</h5>
 </div>
 @endguest
+
 
 

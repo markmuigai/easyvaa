@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Category;
 use App\Feature;
 use App\User;
+use App\Event;
 
 
 class VenuesController extends Controller
@@ -67,11 +68,22 @@ class VenuesController extends Controller
 
     public function myVenues()
     {   
+
         $user = User::find(Auth::id());
         $userId = $user->id;
-        $venues = Venue::where('user_id', $userId)->paginate(3);
+        $venues = Venue::with('events')->where('user_id', $userId)->paginate(3);
         //dd($userId); 
-        return view('venues.myvenues', compact('venues'));
+        $events = Event::all();
+        return view('venues.myvenues', compact('venues','events'));
+    }
+
+    public function myvenue(Venue $venue)
+    {
+
+        Venue::find($venue->id);
+        $events = Event::where('venue_id', 1)->get();
+        //dd($events);
+        return view('venues.myvenue', compact('venue', 'events'));
     }
 
     public function byfeatures(Request $request)

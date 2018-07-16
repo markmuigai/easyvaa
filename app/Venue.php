@@ -18,7 +18,7 @@ class Venue extends Model
     //$venue->events
     public function events()
     {
-    	return $this->hasMany(Event::class);
+    	return $this->hasMany(Event::class, 'venue_id');
     }
 
     //To retrieve user who owns a venue

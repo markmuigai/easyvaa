@@ -7,7 +7,7 @@
 					<div class="panel-heading"><h3>Upload a venue</h3></div>
 					<!-- Display Validation Errors -->
 					@include('layouts.errors')
-					<form method="POST" action="{{ url('myvenues/'.$venue->id) }}" style="padding: 20px 50px;">
+					<form method="POST" action="" style="padding: 20px 50px;">
 						{{csrf_field()}}
 						{{method_field('PUT')}}
 						<div class="form-group">

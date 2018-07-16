@@ -61,8 +61,8 @@ class EventsController extends Controller
         $event->head_count = request('head_count');
         $event->message = request('message');
         //Save it to the database
-        //$event->save();
-        dd($event);
+        $event->save();
+        //dd($event);
         
         //send an email to the owner about the booking on request
         //$user = Auth::user();
