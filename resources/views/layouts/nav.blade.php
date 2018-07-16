@@ -11,7 +11,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li><a href="/Admin">Admin</a></li>
-                <li><a href="/venues">Venues</a></li>
+                <li><a href="/filters">Venues</a></li>
                 @if(Auth::check())
                 <li><a href="/venues/create">Upload a Venue</a></li>
                 <li><a href="/myvenues">My Venues</a></li>

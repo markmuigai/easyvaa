@@ -44,6 +44,11 @@
         border-radius: 0px; 
         border-bottom: 1px solid blue;
     }
+
+    #dropdownMenuLink{
+      margin-right: 1em;
+    }
+
     #flash-message{
         position: absolute;
         z-index: 10;
@@ -60,10 +65,7 @@
         <script>
           $('.dropdown-toggle').dropdown();
           
-          $( function() 
-              {
-                $( "#datepicker" ).datepicker();
-              });
+          $('.your-checkbox').prop('indeterminate', true)
         </script>
 </body>
 </html>

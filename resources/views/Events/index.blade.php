@@ -8,7 +8,7 @@
 				<div class="card" style="height: 25rem; margin:1em;"> 
 				  <div class="card-body">
 				    <h4 class="card-title"><a href="/venues/{{$event->id}}" class="panel-heading btn-block">{{$event->user->name}}</a></h4>
-				    <p class="card-text">{{$event->event_type}} {{$event->date}} {{$event->head_count}}</p>
+				    <p class="card-text">{{$event->event_type}} {{$event->date}} {{$event->headcount}}</p>
 
 				  </div>
 				</div>

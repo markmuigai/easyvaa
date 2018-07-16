@@ -1,11 +1,11 @@
-<!-- @extends('layouts.app')
+@extends('layouts.app')
 @section('content')
 <div class="container-fluid" style="margin: 2em">
 	<div class="row">
 		<div class="col-md-4" style="background-color: white; margin-top: 1em; margin-bottom: 1em; border-radius: 5px; padding: 3em">
 			<h3>Filter Venues</h3>
 			@foreach($categories as $category)
-			<form method="POST" action="">
+			<form method="POST" action="/filters">
 				{{csrf_field()}}
 				<div class="form-check">
 				  <label class="form-check-label">
@@ -50,4 +50,3 @@
 
 
 @endsection
- -->

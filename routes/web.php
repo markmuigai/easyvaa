@@ -24,6 +24,10 @@ Auth::routes();
 // Route::post('/venues/{venue}/categories', 'CategoriesController@store');
 Route::resource('venues', 'VenuesController');
 
+Route::get('/filters', 'VenuesController@showfilters');
+
+Route::post('/filters', 'VenuesController@filters');
+
 Route::get('/details', 'VenuesController@createDetails');
 
 Route::post('/details', 'VenuesController@storeDetails');

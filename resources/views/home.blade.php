@@ -4,10 +4,6 @@
     <h1 class="display-3">venyu</h1> 
     <p class="lead">FInd the right venue for your event now</p> 
     <div class="row justify-content-center">
-    <form class="form-inline">
-    <input type="email" class="form-control" size="50" placeholder="Any Category">
-    <button type="button" class="btn btn-danger">Search</button>
-    </form>
     </div>
   </div>
     <div class="container-fluid instructions">

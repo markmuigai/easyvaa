@@ -20,6 +20,10 @@ class VenuesController extends Controller
     public function index(Request $request)
     {
         //
+        $features = Feature::all();
+        $categories = Category::all();
+
+
         $venues = Venue::with('categories','features')->paginate(6);
         // if($username = request('by')){
         //     $user = User::where('name', $username)->firstOrFail();
@@ -32,9 +36,34 @@ class VenuesController extends Controller
         //$venues = Venue::paginate(3);
         
         //$venues = Venue::filter($request)->get();
-        //dd($venues);
-        return view('venues.index', compact('venues'));
+        //dd($mycategories);
+        return view('venues.index', compact('venues','categories','features'));
     }
+
+
+    public function showfilters()
+    {
+        $venues = Venue::paginate(6);
+        $features = Feature::all();
+        $categories = Category::all();
+        return view('Venues.filter', compact('features', 'categories', 'venues'));
+    }
+
+    public function filters()
+    {
+        $features = Feature::all();
+        $categories = Category::all();
+
+        $mycategories=request('mycategories');
+        //$venues = Venue::where('$venue->categories', Request('categories'))->get();
+        $venues = Venue::whereHas('categories', function($q){
+            $mycategories=request('mycategories');
+            $q->whereIn('id', $mycategories);
+        })->paginate(6);
+
+        return view('Venues.filter', compact('features', 'categories', 'venues'));
+    }
+
 
     public function myVenues()
     {   
