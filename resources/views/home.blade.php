@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
-  <div class="jumbotron text-center landingpage " style="margin-top: 0px;">
+
+<style type="text/css">
+
+</style>
+  <div class="jumbotron text-center text-white landingpage " style="margin-top: 0px;">
     <h1 class="display-3">venyu</h1> 
     <p class="lead">FInd the right venue for your event now</p> 
     <div class="row justify-content-center">
@@ -29,5 +33,8 @@
               </div>
           </div>
       </div>
+  </div>
+  <div>
+    hey
   </div>
 @endsection

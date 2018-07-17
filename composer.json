@@ -19,7 +19,8 @@
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.0",
         "nexmo/laravel": "dev-master as 1.0",
-        "nexmo/client": "dev-master as 1.0"
+        "nexmo/client": "dev-master as 1.0",
+        "cornford/googlmapper": "2.*"
     },
     "autoload": {
         "classmap": [

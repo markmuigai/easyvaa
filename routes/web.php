@@ -61,4 +61,6 @@ Route::post('/categories', 'CategoriesController@store');
 
 Route::get('/admin', 'AdminController@dashboard');
 
+Route::get('/admin/allvenues', 'AdminController@allvenues');
+
 Route::get('/sms/send/{to}', 'EventsController@notify');
