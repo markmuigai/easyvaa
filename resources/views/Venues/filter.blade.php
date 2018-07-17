@@ -19,6 +19,11 @@
 			</form>
 		</div>
 		<div class="col-md-10">
+			@if($venues->count() == '0')
+			<div class="container text-center" style="padding: 5em">
+				<h3>Please refine your filters</h3>
+			</div>
+			@endif
 			@foreach (array_chunk($venues->all(), 3) as $venueRow)
 			<div class="container">	
 			    <div class="row">
