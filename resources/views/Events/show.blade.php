@@ -28,4 +28,4 @@
 
 @endsection
 
-(venueprice * headcount) + additional Charge1 + AdditionalCharge2
+<!-- (venueprice * headcount) + additional Charge1 + AdditionalCharge2 -->

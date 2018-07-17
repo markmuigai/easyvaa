@@ -31,6 +31,19 @@ class EventsController extends Controller
         //
     }
 
+        /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        //
+        $event = Event::find(7);
+        return view('Events.show', compact('event'));
+    }
+
 
     public function myevents()
     {
@@ -43,7 +56,7 @@ class EventsController extends Controller
     public function myevent(Event $event)
     {   
         $event = Event::find($event->id);
-        return view('events.show', compact('event'));
+        return view('events.myevent', compact('event'));
     }
 
 
@@ -97,18 +110,6 @@ class EventsController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Event $event)
-    {
-        //
-        $event = Event::find($event->id);
-        return view('Events.show', compact('event'));
-    }
 
     /**
      * Show the form for editing the specified resource.

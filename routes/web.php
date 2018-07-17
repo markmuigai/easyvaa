@@ -40,6 +40,8 @@ Route::get('/myevents/{event}', 'EventsController@myevent');
 
 Route::get('/myvenue/{venue}', 'VenuesController@myvenue');
 
+Route::get('/myvenue/{venue}/{event}', 'EventsController@show');
+
 Route::get('/myevents/{venue}/edit', 'EventsController@edit');
 
 Route::put('/myevents/{venue}/events', 'EventsController@update');
