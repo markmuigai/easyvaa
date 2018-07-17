@@ -40,6 +40,13 @@ class EventsController extends Controller
         return view('Events.index', compact('events'));
     }
 
+    public function myevent(Event $event)
+    {   
+        $event = Event::find($event->id);
+        return view('events.show', compact('event'));
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -100,7 +107,7 @@ class EventsController extends Controller
     {
         //
         $event = Event::find($event->id);
-        return view('Events.show', compact('events'));
+        return view('Events.show', compact('event'));
     }
 
     /**

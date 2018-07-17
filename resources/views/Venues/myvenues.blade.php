@@ -8,7 +8,7 @@
 				<div class="card" style="height: 30rem; margin:1em;">
 				  <img class="card-img-top" height="200px" width="100px" src="{{$venue->image}}" style="" alt="Venue Image">
 				  <div class="card-body">
-				    <h4 class="card-title"><a href="/myvenues/{{$venue->id}}" class="panel-heading btn-block">{{$venue->venue_name}}</a></h4>
+				    <h4 class="card-title"><a href="/myvenue/{{$venue->id}}" class="panel-heading btn-block">{{$venue->venue_name}}</a></h4>
 				    <p class="card-text">{{$venue->address}} {{$venue->city}}</p>
 				    @foreach($venue->categories as $category)
 					<span class="badge badge-primary">{{$category->name}}</span>

@@ -81,7 +81,7 @@ class VenuesController extends Controller
     {
 
         Venue::find($venue->id);
-        $events = Event::where('venue_id', $venue->id)->get();
+        $events = Event::where('venue_id', $venue->id)->orderBy('created_at', 'desc')->get();
         //dd($venue->id);
         return view('venues.myvenue', compact('venue', 'events'));
     }
