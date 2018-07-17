@@ -4,7 +4,7 @@
 
 <div class="container-fluid myvenue" style="padding: 3em;" >
 	<div class="row" style="">
-		<div class="col-md-8" style="padding: 3em;">
+		<div class="col-md-8" style="padding: 3em; padding-top: 0px;">
 			<div class="row" style="border-bottom: 1px solid black; padding-bottom: 2em">
 				<h1>{{$venue->name}}</h1> <br>
 				<ul class="list-inline">
@@ -19,14 +19,18 @@
 			</div>
 			<div class="row">
 				<div class="col-md-5" style="padding: 2em; padding-left: 0px;">
-					<img height="200px" width="300px" src="{{$venue->second_image}}">
+					<img height="200px" width="300px" src="{{$venue->image}}">
 				</div>
 				<div class="col-md-7" style="padding: 2em; padding-left: 0px;">
 					<p>{{$venue->basic_info}}</p>	
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4" style="margin-bottom: 2em">
+				<div class="col-md-5" style="padding: 2em; padding-left: 0px;">
+					<img height="200px" width="300px" src="{{$venue->second_image}}">
+				</div>
+				<br><br>
+				<div class="col-md-7">
 				<ul class="list-group">
 					<h3>Features</h3>
 					@foreach($venue->Features as $feature)
@@ -34,11 +38,6 @@
 					@endforeach
 				</ul>
 				</div>
-				<br><br>
-				<div class="col-md-8">
-				<h3>Venue Hire Fee</h3>
-				<p>{{$venue->fee_info}}}</p>
-			</div>
 				<br>
 				<h3>Booking info</h3><br>
 				<p>{{$venue->booking_info}}</p>

@@ -271,10 +271,12 @@ class VenuesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Venue $venue)
     {
         //
-        $venue = Venue::find($id);
+        $venue = Venue::find($venue->id);
+        $venue->delete();
+        return redirect('/myvenues');
     }
 }
 

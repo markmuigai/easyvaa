@@ -52,7 +52,7 @@ Route::get('/myvenues/{venue}/edit', 'VenuesController@edit');
 
 Route::put('/myvenues/{venue}/edit', 'VenuesController@update');
 
-// Route::put('/myvenues/{venue}/destroy', 'VenuesController@destroy');
+Route::delete('/myvenues/destroy/{venue}', 'VenuesController@delete');
 
 
 Route::get('/categories', 'CategoriesController@create');

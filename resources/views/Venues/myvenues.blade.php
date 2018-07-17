@@ -5,20 +5,21 @@
     <div class="row">
         @foreach ($venueRow as $venue)
          <div class="col-md-4 venues">
-				<div class="card" style="height: 30rem; margin:1em;">
+				<div class="card" style="height: 28rem; margin:1em;">
 				  <img class="card-img-top" height="200px" width="100px" src="{{$venue->image}}" style="" alt="Venue Image">
 				  <div class="card-body">
-				    <h4 class="card-title"><a href="/myvenue/{{$venue->id}}" class="panel-heading btn-block">{{$venue->venue_name}}</a></h4>
+				    <h4 class="card-title"><a href='/myvenues/{{$venue->id}}/edit' class="panel-heading btn-block">Edit: {{$venue->venue_name}}</a></h4>
+				    <h5><a href="/myvenue/{{$venue->id}}">Venue Requests</a></h5>
 				    <p class="card-text">{{$venue->address}} {{$venue->city}}</p>
 				    @foreach($venue->categories as $category)
 					<span class="badge badge-primary">{{$category->name}}</span>
-					@endforeach <br>
-					<div style="margin: 1em" class="btn-group" role="group" aria-label="Basic example">
-					  <!-- <button type="button" class="btn btn-warning">Edit</button> -->
-					  <a href='/myvenues/{{$venue->id}}/edit' type="button" class="btn btn-warning">Edit</a>
-					  <a href='/myvenues/{{$venue->id}}/destroy' type="button" class="btn btn-warning">Delete</a>
-					  <!-- <button type="button" class="btn btn-danger">Delete</button> -->
-					</div>
+					@endforeach <br><br>
+						<form action="/myvenues/destroy/{{$venue->id}}" method="POST">
+						    {{ csrf_field() }}
+						    {{ method_field('DELETE') }}
+						    <button type="button" class="btn btn-danger" style="margin-left: 1em">Delete</button>
+						</form>
+					  
 				  </div>
 				</div>
 		 </div>
