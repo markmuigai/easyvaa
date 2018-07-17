@@ -36,7 +36,7 @@ Route::post('/venues/{venue}/events', 'EventsController@store');
 
 Route::get('/myevents', 'EventsController@myevents');
 
-Route::get('/myvenue/{venue}', 'EventsController@show');
+Route::get('/myvenue/{venue}', 'VenuesController@myvenue');
 
 Route::get('/myevents/{venue}/edit', 'EventsController@edit');
 
@@ -56,3 +56,7 @@ Route::get('/categories', 'CategoriesController@create');
 Route::post('/categories', 'CategoriesController@store');
 
 Route::get('/admin', 'AdminController@dashboard');
+
+
+
+Route::get('/sms/send/{to}', 'EventsController@notify');

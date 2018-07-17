@@ -81,8 +81,8 @@ class VenuesController extends Controller
     {
 
         Venue::find($venue->id);
-        $events = Event::where('venue_id', 1)->get();
-        //dd($events);
+        $events = Event::where('venue_id', $venue->id)->get();
+        //dd($venue->id);
         return view('venues.myvenue', compact('venue', 'events'));
     }
 

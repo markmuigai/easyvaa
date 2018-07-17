@@ -72,7 +72,22 @@ class EventsController extends Controller
 
         session()->flash('message', 'Thanks for the quote. Owners will get back to you in a jiffy!');
         //And then redirect to the previous page
-        return redirect('/myevents');
+        return redirect('/sms/send/{to}');
+    }
+
+    public function notify(\Nexmo\Client $nexmo, $to, Event $event)
+    {
+            $event = Event::orderBy('created_at', 'desc')->first();
+            $username = Auth::user()->name;
+            $message = $nexmo->message()->send([
+                'to' => 254717831279,
+                'from' => "NEXMO",
+                'text' => $username.'is requesting to use your venue! Send him a quote at http://127.0.0.1:8000/myvenue/1',
+            ]);
+            
+            
+            return redirect('/myevents');
+
     }
 
     /**
@@ -151,4 +166,5 @@ class EventsController extends Controller
         $event->delete();
         return redirect('/myevents');
     }
+
 }
