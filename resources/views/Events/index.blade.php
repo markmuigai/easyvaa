@@ -1,5 +1,13 @@
 @extends('layouts.app')
 @section('content')
+
+@if($events->count() == '0')
+<div class="container text-center" style="padding: 5em">
+	<h3>You have not requested for any venues</h3>
+</div>
+@endif
+
+
 @foreach (array_chunk($events->all(), 3) as $eventRow)
 <div class="container">	
     <div class="row">

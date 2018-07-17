@@ -102,7 +102,7 @@ class EventsController extends Controller
             $message = $nexmo->message()->send([
                 'to' => 254717831279,
                 'from' => "NEXMO",
-                'text' => $username.'is requesting to use your venue! Send him a quote at http://127.0.0.1:8000/myvenue/1',
+                'text' => $username.'is requesting to use your venue! Send him a quote at http://127.0.0.1:8000/myvenue/$venue->id',
             ]);
             
             

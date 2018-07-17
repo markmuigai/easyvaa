@@ -18,7 +18,6 @@
                 <li><a href="/venues/create">Upload a Venue</a></li>
                 @if(Auth::User()->venues->count()!= "0")
                 <li><a href="/myvenues">My Venues</a></li>
-                <li><a href="/myvenues/{venue}"> Pending Requests</a></li>
                 @endif
                 <li><a href="/myevents">My Events</a></li>
                 @endif

@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="container-fluid" style="margin: 2em">
 	<div class="row">
-		<div class="col-md-4" style="background-color: white; margin-top: 1em; margin-bottom: 1em; border-radius: 5px; padding: 3em">
+		<div class="col-md-2" style="background-color: white; margin-top: 1em; margin-bottom: 1em; border-radius: 5px; padding: 3em">
 			<h3>Filter Venues</h3>
 			@foreach($categories as $category)
 			<form method="POST" action="/filters">
@@ -17,14 +18,14 @@
 				<button class="btn btn-primary">Filter</button>
 			</form>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-10">
 			@foreach (array_chunk($venues->all(), 3) as $venueRow)
 			<div class="container">	
 			    <div class="row">
 			        @foreach ($venueRow as $venue)
 			         <div class="col-md-4 venues">
 							<div class="card" style="height: 25rem; margin:1em;"> 
-							  <img class="card-img-top" height="200px" width="100px" src="{{ asset('images/' . $venue->image) }}" alt="Venue Image">
+							  <img class="card-img-top" height="200px" width="100px" src="{{$venue->image}}" alt="Venue Image">
 							  <div class="card-body">
 							    <h4 class="card-title"><a href="/venues/{{$venue->id}}" class="panel-heading btn-block">{{$venue->venue_name}}</a></h4>
 							    <p class="card-text">{{$venue->address}} {{$venue->city}}</p>
@@ -50,3 +51,4 @@
 
 
 @endsection
+<!--  -->

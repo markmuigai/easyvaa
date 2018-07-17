@@ -236,6 +236,24 @@ class VenuesController extends Controller
         $myvenues = request('myfeatures');
         $venue->features()->attach($myvenues);
         $venue->categories()->sync(request('mycategories'));
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        
+        $venue->image = $name;
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $name);
+
+        $second_image = $request->file('second_image');
+        $name = time().'.'.$second_image->getClientOriginalExtension();
+        $venue->second_image = $name;
+        $destinationPath = public_path('/images');
+        $second_image->move($destinationPath, $name);
+
+        $third_image = $request->file('third_image');
+        $name = time().'.'.$third_image->getClientOriginalExtension();
+        $venue->image = $name;
+        $destinationPath = public_path('/images');
+        $third_image->move($destinationPath, $name);
         //Save it to the database
         $venue->save();
         //dd($venue);
