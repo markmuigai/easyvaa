@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+
+@if(Auth::id()!= 1)
+	<div class="container text-center" style="padding: 5em">
+		<h3>You do not have admin access</h3>
+	</div>
+@else
 <div class="container" style="padding:2em;">
 	<div class="row justify-content-center">
 		<div col-md-4>
@@ -29,5 +35,6 @@
 		</div>
 	</div>
 </div>
+@endif
 
 @endsection

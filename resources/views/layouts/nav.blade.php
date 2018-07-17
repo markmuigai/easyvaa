@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                @if(Auth::user())
+                @if(Auth::id() == "1")
                 <li><a href="/admin">Admin</a></li>
                 @endif
                 <li><a href="/filters">Venues</a></li>
