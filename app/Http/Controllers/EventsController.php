@@ -19,8 +19,9 @@ class EventsController extends Controller
     public function index()
     {
         //
-        $events = Event::latest()->get();
-        return view('events.index', compact('events'));
+        $events = Event::where('user_id', Auth::id())->get();
+        $quotes = Quote::all();
+        return view('events.index', compact('events', 'quotes'));
     }
 
     /**
@@ -50,17 +51,18 @@ class EventsController extends Controller
     public function myevents()
     {
         $user = User::find(Auth::id());
-
+        
         $userId = $user->id;
         $events = Event::where('user_id', $userId)->get();
-        return view('Events.index', compact('events'));
+        return view('Events.index', compact('events', 'quotes'));
     }
 
     public function myevent(Event $event)
     {   
         $event = Event::find($event->id);
-        $quote = Quote::where('event_id', $event->id)->get(); 
-        return view('events.myevent', compact('event'));
+        $quotes = Quote::where('event_id', $event->id)->get();
+        // dd($event);
+        return view('events.myevent', compact('event','quotes'));
     }
 
     /**
@@ -107,7 +109,6 @@ class EventsController extends Controller
                 'from' => "NEXMO",
                 'text' => $username.'is requesting to use your venue! Send him a quote at http://127.0.0.1:8000/myvenue/$venue->id',
             ]);
-            
             
             return redirect('/myevents');
 

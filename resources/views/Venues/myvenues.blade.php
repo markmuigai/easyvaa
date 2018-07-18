@@ -9,7 +9,7 @@
 				  <img class="card-img-top" height="200px" width="100px" src="{{$venue->image}}" style="" alt="Venue Image">
 				  <div class="card-body">
 				    <h4 class="card-title"><a href='/myvenues/{{$venue->id}}/edit' class="panel-heading btn-block">Edit: {{$venue->venue_name}}</a></h4>
-				    <h5><a href="/myvenue/{{$venue->id}}">Venue Requests</a></h5>
+				    <h5><a href="/myvenue/{{$venue->id}}">Venue Requests <span class="badge badge-primary">{{$venue->events->count()}}</span></a></h5>
 				    <p class="card-text">{{$venue->address}} {{$venue->city}}</p>
 				    @foreach($venue->categories as $category)
 					<span class="badge badge-primary">{{$category->name}}</span>

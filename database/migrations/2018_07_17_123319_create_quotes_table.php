@@ -16,10 +16,10 @@ class CreateQuotesTable extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('event_id');
-            $table->integer('deposit');
+            $table->integer('deposit')->nullable();
             $table->integer('basePrice');
-            $table->integer('additionalCost');
-            $table->integer('totalPrice')
+            $table->integer('additionalCost')->nullable();
+            $table->integer('totalPrice');
             $table->timestamps();
         });
     }

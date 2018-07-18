@@ -66,3 +66,4 @@ Route::get('/admin/allvenues', 'AdminController@allvenues');
 Route::post('/myvenue/{venue}/{event}', 'QuotesController@store');
 
 Route::get('/sms/send/{to}', 'EventsController@notify');
+	

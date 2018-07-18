@@ -60,6 +60,8 @@
     .jumbotron.landingpage{
 background-image: url("https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9dcb31a62d4d016bf6c442fc6143e811&auto=format&fit=crop&w=1050&q=80");
 background-size: cover;}
+  
+
 </style>
 <body>
     <div id="app">
@@ -70,7 +72,14 @@ background-size: cover;}
         <script>
           $('.dropdown-toggle').dropdown();
           
-          $('.your-checkbox').prop('indeterminate', true)
+          $('.your-checkbox').prop('indeterminate', true);
+
+        $(document).ready(function() {
+            $('.numbers').each(function() {
+                $(this).format({format:"#,###", locale:"us"});
+            });
+        });
+
         </script>
 </body>
 </html>
