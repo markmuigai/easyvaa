@@ -65,5 +65,12 @@ Route::get('/admin/allvenues', 'AdminController@allvenues');
 
 Route::post('/myvenue/{venue}/{event}', 'QuotesController@store');
 
+Route::post('/quotes/{quote}', 'PaymentsController@store');
+
+Route::get('/mypayments', 'PaymentsController@mypayments');
+
+// Route::get('mypayments/{payment}', 'PaymentsController@mypayment');
+Route::get('myevents/{event}/{quote}', 'PaymentsController@mypayment');
+
 Route::get('/sms/send/{to}', 'EventsController@notify');
-	
+

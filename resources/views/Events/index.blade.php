@@ -16,7 +16,6 @@
 				<div class="card text-white bg-primary mb-3" style="height: 10rem; margin:1em;"> 
 			  <div class="card-body">
 			    <h4 class="card-title"><a class="text-white" href="/myevents/{{$event->id}}">My {{$event->event_type}}</a></h4>
-			    <p class="card-text"><span class="badge badge-success">Quote Received</span></p>
 			    <p class="card-text">{{$event->created_at->diffForHumans()}}</p>
 			  </div>
 				</div>

@@ -27,4 +27,9 @@ class Event extends Model
     {
         return $this->hasOne(Quote::class);
     }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
 }

@@ -7,6 +7,7 @@ use App\User;
 use App\Event;
 use App\Venue;
 use App\Quote;
+use App\Payment;
 
 use Auth;
 class EventsController extends Controller
@@ -61,7 +62,6 @@ class EventsController extends Controller
     {   
         $event = Event::find($event->id);
         $quotes = Quote::where('event_id', $event->id)->get();
-        // dd($event);
         return view('events.myevent', compact('event','quotes'));
     }
 
@@ -100,7 +100,7 @@ class EventsController extends Controller
         return redirect('/sms/send/{to}');
     }
 
-    public function notify(\Nexmo\Client $nexmo, $to, Event $event)
+    public function notify(\Nexmo\Client $nexmo, $to)
     {
             $event = Event::orderBy('created_at', 'desc')->first();
             $username = Auth::user()->name;
