@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Event;
 use App\Venue;
+use App\Quote;
+
 use Auth;
 class EventsController extends Controller
 {
@@ -37,10 +39,10 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Venue $venue, Event $event)
     {
         //
-        $event = Event::find(7);
+        $event = Event::find($event->id);
         return view('Events.show', compact('event'));
     }
 
@@ -48,6 +50,7 @@ class EventsController extends Controller
     public function myevents()
     {
         $user = User::find(Auth::id());
+
         $userId = $user->id;
         $events = Event::where('user_id', $userId)->get();
         return view('Events.index', compact('events'));
@@ -56,9 +59,9 @@ class EventsController extends Controller
     public function myevent(Event $event)
     {   
         $event = Event::find($event->id);
+        $quote = Quote::where('event_id', $event->id)->get(); 
         return view('events.myevent', compact('event'));
     }
-
 
     /**
      * Store a newly created resource in storage.
