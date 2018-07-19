@@ -6,8 +6,8 @@
 	<p>Paid Amount: {{$mypayment->amount}} Ksh</p>
 	@if($mypayment->amount != $event->quote->totalPrice)
 		<p>Incomplete Payment</p>
-	@else
 		<p>Balance = {{$event->quote->totalPrice - $mypayment->amount}} Ksh</p>
+	@else
 		<span class="badge badge-success">Complete Payment</span>
 	@endif
 </div>

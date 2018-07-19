@@ -51,7 +51,7 @@
 					<input style="" type="text" name="event_type" class="form-control" placeholder="Event Type">
 				</div>
 				<div class="form-group">
-					<input type="text" id="datepicker" name="date" class="form-control" placeholder="Event Date: (dd/mm/yyyy)">
+					<input type="text" id="datepicker" name="date" class="form-control" placeholder="Event Date: (mm/dd/yyyy)">
 				</div>
 				<div class="form-group">
 					<input type="text" name="head_count" class="form-control" placeholder="Number of People">

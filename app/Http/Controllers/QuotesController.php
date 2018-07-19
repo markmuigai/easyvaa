@@ -24,21 +24,7 @@ class QuotesController extends Controller
     	$quote->save();
     	// dd($quote);
 
-    	return redirect('/myvenues/events');
+    	return redirect('/');
     }
 
-    // public function notify(\Nexmo\Client $nexmo, $to)
-    // {
-    //         // $event = Event::orderBy('created_at', 'desc')->first();
-    //         $username = Auth::user()->name;
-    //         $message = $nexmo->message()->send([
-    //             'to' => 254717831279,
-    //             'from' => "NEXMO",
-    //             'text' => $username.'has sent you a quote. review it at http://127.0.0.1:8000/myvenue/$venue->id',
-    //         ]);
-            
-            
-    //         return redirect('/');
-
-    // }
 }

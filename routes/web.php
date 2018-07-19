@@ -74,3 +74,5 @@ Route::get('myevents/{event}/{quote}', 'PaymentsController@mypayment');
 
 Route::get('/sms/send/{to}', 'EventsController@notify');
 
+
+

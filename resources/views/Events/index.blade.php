@@ -15,7 +15,7 @@
          <div class="col-md-4 events">
 				<div class="card text-white bg-primary mb-3" style="height: 10rem; margin:1em;"> 
 			  <div class="card-body">
-			    <h4 class="card-title"><a class="text-white" href="/myevents/{{$event->id}}">My {{$event->event_type}}</a></h4>
+			    <h4 class="card-title"><a class="text-white" href="/myevents/{{$event->id}}">My {{$event->event_type}} at {{$event->venue->venue_name}}</a></h4>
 			    <p class="card-text">{{$event->created_at->diffForHumans()}}</p>
 			  </div>
 				</div>

@@ -15,10 +15,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -74,12 +71,15 @@ background-size: cover;}
           
           $('.your-checkbox').prop('indeterminate', true);
 
+          
         $(document).ready(function() {
             $('.numbers').each(function() {
                 $(this).format({format:"#,###", locale:"us"});
             });
         });
-
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
         </script>
 </body>
 </html>
