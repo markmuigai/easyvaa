@@ -7,7 +7,7 @@ use Auth;
 use App\Venue;
 use App\User;
 use App\Event;
-
+use App\Payment;
 
 class AdminController extends Controller
 {
@@ -19,8 +19,9 @@ class AdminController extends Controller
     	$venues = Venue::all();
     	$users = User::all();
     	$events = Event::all();
+        $payments = Payment::all();
 
-    	return view('Admin.dashboard', compact('venues', 'users', 'events'));
+    	return view('Admin.dashboard', compact('venues', 'users', 'events', 'payments'));
     }
 
     public function allvenues()
@@ -28,4 +29,16 @@ class AdminController extends Controller
     	$venues = Venue::paginate(5);
     	return view('Admin.allvenues', compact('venues', 'users', 'events'));
     }
+
+    public function allevents()
+    {
+        $events = Event::paginate(5);
+        return view('Admin.allevents', compact('venues', 'users', 'events'));
+    }
+
+    public function allusers()
+    {
+        $users = User::paginate(5);
+        return view('Admin.allusers', compact('venues', 'users', 'events'));
+    }    
 }

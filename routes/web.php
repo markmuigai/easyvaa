@@ -63,6 +63,11 @@ Route::get('/admin', 'AdminController@dashboard');
 
 Route::get('/admin/allvenues', 'AdminController@allvenues');
 
+Route::get('/admin/allevents', 'AdminController@allevents');
+
+Route::get('/admin/allusers', 'AdminController@allusers');
+
+
 Route::post('/myvenue/{venue}/{event}', 'QuotesController@store');
 
 Route::post('/quotes/{quote}', 'PaymentsController@store');
